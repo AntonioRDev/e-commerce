@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitf3b835fcafc7f258938efb87f4102550
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Source\\' => 7,
+        ),
         'C' => 
         array (
             'CoffeeCode\\DataLayer\\' => 21,
@@ -14,6 +18,10 @@ class ComposerStaticInitf3b835fcafc7f258938efb87f4102550
     );
 
     public static $prefixDirsPsr4 = array (
+        'Source\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/source',
+        ),
         'CoffeeCode\\DataLayer\\' => 
         array (
             0 => __DIR__ . '/..' . '/coffeecode/datalayer/src',
