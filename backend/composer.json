@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce/backend",
+  "description": "Rest API e-commerce",
+  "type": "project",
+  "require": {
+    "coffeecode/datalayer": "1.1.*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Antonio Carlos",
+      "email": "antonioribdev@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    }
+  }
+}
