@@ -52,6 +52,20 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         echo json_encode(array("response" => "Usuário criado com sucesso!"));
 
         break;
+    case "GET":
+        header("HTTP/1.1 200 OK");
+        $users = new User();
+
+        if ($users->find()->count() > 0) {
+            $return = array();
+            foreach ($users->find()->fetch(true) as $user) {
+                array_push($return, $user->data());
+            }
+            echo json_encode(array("response" => $return));
+        } else {
+            echo json_encode(array("response" => "Nenhum usuário localizado!"));
+        }
+        break;
     default;
         header("HTTP/1.1 401 Unauthorized");
         echo json_encode(array("response" => "Método não previsto na API"));
