@@ -1,0 +1,21 @@
+CREATE TABLE users 
+(id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+type VARCHAR(20) NOT NULL,
+email VARCHAR(80) NOT NULL,
+password VARCHAR(255) NOT NULL,
+created_at TIMESTAMP NOT NULL,
+deleted_at TIMESTAMP,
+deleted BOOLEAN NOT NULL,
+user_informations_id INT REFERENCES user_informations(id),
+UNIQUE(user_informations_id));
+
+CREATE TABLE product 
+(id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+title VARCHAR(255) NOT NULL,
+price DECIMAL(6,2) NOT NULL,
+description VARCHAR(255) NOT NULL,
+product TEXT [] NOT NULL,
+created_at TIMESTAMP NOT NULL,
+deleted_at TIMESTAMP,
+deleted BOOLEAN NOT NULL,
+created_by INT REFERENCES users(id) NOT NULL);
